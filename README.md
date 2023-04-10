@@ -2,7 +2,7 @@
 ##  This is an official implementation of "Learning the degradation distribution for medical image superresolution via sparse swin transformer".
 
 <p align='center'>  
-  <img src='./fig/l.png'/>
+  <img src='fig/l.png'  width='440'/>
 </p>
 
 # Introduction
