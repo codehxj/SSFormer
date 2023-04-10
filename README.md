@@ -1,5 +1,5 @@
 # SSFormer
-## Learning the degradation distribution for medical image superresolution via sparse swin transformer
+## This official implementation of "Learning the degradation distribution for medical image superresolution via sparse swin transformer".
 
 # Introduction
 
