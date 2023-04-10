@@ -9,7 +9,7 @@ Clear medical images are significant for auxiliary diagnoses, but the images gen
 #### Dependencies
 - Python 3
 - [PyTorch >= 0.4.0](https://pytorch.org/)
-- Python packages:  `pip install numpy opencv-python`
+
 
 ### Test models
 1. Clone this github repo. 
@@ -17,9 +17,9 @@ Clear medical images are significant for auxiliary diagnoses, but the images gen
 git clone https://github.com/codehxj/SSFormer/
 cd SSFormer
 ```
-2. Place your own **low-resolution images** in `./LR` folder. (There are two sample images - baboon and comic). 
-3. Download pretrained models from [Baidu Drive](Later...). Place the models in `./models`. 
-4. Run test. We provide SSFormer model at scale "x 2" and "x 4" factor.
+2. Place your own **low-resolution images** in `./LR` folder.  
+3. Download pretrained models from [Baidu Drive] (Later...). Place the models in `./models`. 
+4. Run test. We provide SSFormer model at scale "x 2" and "x 4".
 ```
 python test.py models/SSFormer_x2.pth
 python test.py models/SSFormer_x4.pth
