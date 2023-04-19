@@ -13,8 +13,8 @@ Clear medical images are significant for auxiliary diagnoses, but the images gen
 
 ## Quick Test
 #### Dependencies
-- Python 3
-- [PyTorch >= 0.4.0](https://pytorch.org/)
+- Python 3.8
+- [PyTorch >= 1.8](https://pytorch.org/)
 
 
 ### Test models
