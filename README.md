@@ -15,6 +15,7 @@ Clear medical images are significant for auxiliary diagnoses, but the images gen
 #### Dependencies
 - Python 3.8
 - [PyTorch >= 1.8](https://pytorch.org/)
+- cudatoolkit 10.1 
 
 
 ### Test models
