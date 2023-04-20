@@ -17,19 +17,26 @@ Clear medical images are significant for auxiliary diagnoses, but the images gen
 - [PyTorch >= 1.8](https://pytorch.org/)
 - cudatoolkit 10.1 
 
+## Dataset
+Download DIV2K training data (800 training + 100 validtion images) from [DIV2K Dataset](https://data.vision.ee.ethz.ch/cvl/DIV2K/)
 
-### Test models
-1. Clone this github repo. 
-```
-git clone https://github.com/codehxj/SSFormer/
-cd SSFormer
-```
-2. Place your own **low-resolution images** in `./LR` folder.  
-3. Download pretrained models from [Baidu Drive] (Later...). Place the models in `./models`. 
-4. Run test. We provide SSFormer model at scale "x 2" and "x 4".
-```
-python test.py models/SSFormer_x2.pth
-python test.py models/SSFormer_x4.pth
-```
-5. The results are in `./results` folder.
+## Train：
+### 1. Example X2 SR
+python main.py --dir_data ./.. --n_GPUs 0 --rgb_range 1 --chunk_size 128 --n_hashes 4 --lr 1e-4 --decay 200-400-600-800 --epochs 1000  --n_resblocks 32 --n_feats 256 --res_scale 0.1 --batch_size 16 --model SSFormer --scale 2 --patch_size 96 --save ./ --data_train DIV2K/cell
+
+### 2. Example X4 SR
+python main.py --dir_data ./.. --n_GPUs 0 --rgb_range 1 --chunk_size 128 --n_hashes 4 --lr 1e-4 --decay 200-400-600-800 --epochs 1000  --n_resblocks 32 --n_feats 256 --res_scale 0.1 --batch_size 16 --model SSFormer --scale 4  --patch_size 96 --save ./ --data_train DIV2K/cell
+
+## Test:
+
+### 1. Download benchmark datasets from https://cv.snu.ac.kr/research/EDSR/benchmark.tar
+### 2 Example X2 SR
+python main.py --dir_data ../ --model SSFormer  --chunk_size 144 --data_test Set5 --n_hashes 4  --rgb_range 1 --data_range 801-900 --scale 2 --n_feats 256 --n_resblocks 32 --res_scale 0.1  --pre_train ./model_x2.pt 
+
+### Acknowledgements:
+This code is built on [HarukiYqM/Non-Local-Sparse-Attention](https://github.com/HarukiYqM/Non-Local-Sparse-Attention) 
+and [JingyunLiang/SwinIR](https://github.com/JingyunLiang/SwinIR)
+
+
+
 
